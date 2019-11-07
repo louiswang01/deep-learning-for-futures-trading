@@ -1,0 +1,102 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  13 OCT 2019 22:47
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**icml2020.sty
+(./icml2020.sty
+LaTeX2e <2018-12-01>
+
+LaTeX Warning: You have requested package `',
+               but the package provides `icml2019'.
+
+Package: icml2019 2019/01/07 v2.0 ICML Conference Style File
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+) (./fancyhdr.sty
+\fancy@headwidth=\skip41
+\f@ncyO@elh=\skip42
+\f@ncyO@erh=\skip43
+\f@ncyO@olh=\skip44
+\f@ncyO@orh=\skip45
+\f@ncyO@elf=\skip46
+\f@ncyO@erf=\skip47
+\f@ncyO@olf=\skip48
+\f@ncyO@orf=\skip49
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+(./algorithm.sty
+Package: algorithm 
+
+Document Style `algorithm' - floating environment
+(/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count80
+\float@exts=\toks14
+\float@box=\box27
+\@float@everytoks=\toks15
+\@floatcapt=\box28
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks16
+\c@algorithm=\count81
+)
+(./algorithmic.sty
+Package: algorithmic 
+
+Document Style `algorithmic' - environment
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count82
+\calc@Bcount=\count83
+\calc@Adimen=\dimen102
+\calc@Bdimen=\dimen103
+\calc@Askip=\skip50
+\calc@Bskip=\skip51
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count84
+\calc@Cskip=\skip52
+)
+\c@ALC@line=\count85
+\c@ALC@rem=\count86
+\ALC@tlm=\skip53
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip54
+\bibsep=\skip55
+
+/usr/local/texlive/2019/texmf-dist/tex/latex/natbib/natbib.sty:640: Undefined c
+ontrol sequence.
+l.640  {\@listi
+                \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+? 
+/usr/local/texlive/2019/texmf-dist/tex/latex/natbib/natbib.sty:640: Emergency s
+top.
+l.640  {\@listi
+                \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 837 strings out of 492616
+ 10582 string characters out of 6129482
+ 71653 words of memory out of 5000000
+ 4818 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 23i,0n,43p,243b,26s stack positions out of 5000i,500n,10000p,200000b,80000s
+/usr/local/texlive/2019/texmf-dist/tex/latex/natbib/natbib.sty:640:  ==> Fatal 
+error occurred, no output PDF file produced!

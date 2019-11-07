@@ -1,0 +1,130 @@
+%%%%%%%% ICML 2019 EXAMPLE LATEX SUBMISSION FILE %%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+% Recommended, but optional, packages for figures and better typesetting:
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} % for professional tables
+
+% hyperref makes hyperlinks in the resulting PDF.
+% If your build breaks (sometimes temporarily if a hyperlink spans a page)
+% please comment out the following usepackage line and replace
+% \usepackage{icml2019} with \usepackage[nohyperref]{icml2019} above.
+\usepackage{hyperref}
+
+% Attempt to make hyperref and algorithmic work together better:
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% Use the following line for the initial blind version submitted for review:
+\usepackage[accepted]{icml2020}
+
+% If accepted, instead use the following line for the camera-ready submission:
+%\usepackage[accepted]{icml2019}
+
+% The \icmltitle you define below is probably too long as a header.
+% Therefore, a short form for the running title is supplied here:
+\icmltitlerunning{Practical Deep Learning Approach for Intraday Futures Trading}
+
+\begin{document}
+
+\twocolumn[
+\icmltitle{Practical Deep Learning Approach for Intraday Futures Trading}
+
+% It is OKAY to include author information, even for blind
+% submissions: the style file will automatically remove it for you
+% unless you've provided the [accepted] option to the icml2019
+% package.
+
+% List of affiliations: The first argument should be a (short)
+% identifier you will use later to specify author affiliations
+% Academic affiliations should list Department, University, City, Region, Country
+% Industry affiliations should list Company, City, Region, Country
+
+% You can specify symbols, otherwise they are numbered in order.
+% Ideally, you should not use this facility. Affiliations will be numbered
+% in order of appearance and this is the preferred way.
+\icmlsetsymbol{equal}{*}
+
+\begin{icmlauthorlist}
+\icmlauthor{Yuyuan Cui}{cu}
+\icmlauthor{Ziyan Wang}{cu}
+\end{icmlauthorlist}
+
+\icmlaffiliation{cu}{Columbia University, New York, USA}
+
+\icmlcorrespondingauthor{Yuyuan Cui}{yc2968@columbia.edu}
+\icmlcorrespondingauthor{Ziyan Wang}{zw2569@columbia.edu}
+
+% You may provide any keywords that you
+% find helpful for describing your paper; these are used to populate
+% the "keywords" metadata in the PDF but will not be shown in the document
+\icmlkeywords{Deep Learning, Reinforcement Learning, Trading Strategy}
+
+\vskip 0.3in
+]
+
+% this must go after the closing bracket ] following \twocolumn[ ...
+
+% This command actually creates the footnote in the first column
+% listing the affiliations and the copyright notice.
+% The command takes one argument, which is text to display at the start of the footnote.
+% The \icmlEqualContribution command is standard text for equal contribution.
+% Remove it (just {}) if you do not need this facility.
+
+%\printAffiliationsAndNotice{}  % leave blank if no need to mention equal contribution
+%\printAffiliationsAndNotice{\icmlEqualContribution} % otherwise use the standard text.
+
+\begin{abstract}
+This project proposal provides an outline for using deep learning and reinforcement learning approach for developing systematic futures trading strategies in intraday timeframe.
+\end{abstract}
+
+\section{Introduction}
+\label{intro}
+
+Deep learning has been a popular topic in quantitative financial trading. Xiong, Liu, Zhong, Yang and Walid (2018) used deep reinforcement learning to obtain optimal strategy in the complex and dynamic stock market \cite{xiong2018practical}. Sezer, Ozbayoglua, and Dogdub (2017) used DNNs for optimizing daily technical indicators for stock trading \cite{SEZER2017473}. However, few studies have focused on applying deep learning approach to intraday and tick-level data for trading. As tick data provides a much larger dataset for training than daily data, and that various order placement types provide more options for action, there is plenty of opportunities to use complicated deep learning architecture for both prediction and strategy formulation.
+
+\section{Problem Statement}
+
+The objective is to design deep learning models that maximize trading profit for IH futures\footnote{IH future is based on SSE 50 Index, one of the most popular index futures traded in CFFEX} based on tick-level high frequency data. We will build two individual models in this project. The first one focuses on short-term price movement prediction only and we will manually formulate a simple trading strategy based on its predictions. The second model uses deep reinforcement learning and will output trading actions on its own. In addition, we will set up a passive market-making strategy as benchmark\footnote{enter and exit a position on best bid and offer}. By comparing their performance, we can evaluate the applicability of reinforcement learning and deep learning in intraday futures trading with various degrees of human experience intervention.
+
+\section{Dataset and Algorithms}
+
+The dataset we use is tick data of IH futures and potentially other products’ tick data in China’s CFFEX exchange in 2018\footnote{CFFEX exchange website}. The data include all book updates and trade events. We will construct features from 1) moving averages of trade price and quote price, 2) moving averages of book size and imbalance, 3) cross assets price changes and 4) weighted-mid price change in look-back period. Look-back window lengths of 1 min, 5 min and 10 min will be used.
+
+For the first model, we will use LSTM model for intraday price change prediction. A set of prediction horizon (1 min, 5 min and 10 min) will be experimented. A static take profit / stop loss strategy is applied on the prediction to generate trade actions. The size of look-back window and the strategy parameters are optimized based on validation dataset. 
+
+For the second one, we model the stock trading process as a Markov Decision Process (MDP) with Deep Deterministic Policy Gradient (DDPG) algorithm \cite{xiong2018practical}. The expected reward of taking action $a_t$ is calculated with
+
+$Q_\pi(s_t,a_t)=E_{s_{t+1}}[r(s_t,a_t,s_{t+1})+\gamma \max\limits_{a_{t+1}} Q(s_{t+1},a_{t+1})]$
+
+where $s_t$ and $a_t$ are the state and action at time $t$, $r(s,a,s')$ is the change of the portfolio value when action $a$ is taken at state $s$ and arriving at the new state $s'$, $\gamma$ is a discount factor, and $Q_\pi(s,a)$ is the action-value function.
+
+\section{Performance Evaluation}
+
+For price change prediction, evaluate the LSTM model using mean-squared error (MSE) of predicted compared with actual price change in the testing dataset. We will also compare MSE against benchmark model using OLS regression. 
+
+The final performance of the two models are evaluated by running on testing period and comparing trading profit against benchmark passive market making strategy. Measures includes total return, Shape Ratio and maximum drawdown\footnote{A maximum drawdown (MDD) is the maximum observed loss from a peak to a trough of a portfolio, before a new peak is attained}. No transaction fee is assumed. We will use the first 9 months of the data for training, October data for validation, and the last two months for testing.
+
+% In the unusual situation where you want a paper to appear in the
+% references without citing it in the main text, use \nocite
+\pagebreak
+\bibliographystyle{icml2020}
+\bibliography{proposal}
+
+
+\end{document}
+
+
+% This document was modified from the file originally made available by
+% Pat Langley and Andrea Danyluk for ICML-2K. This version was created
+% by Iain Murray in 2018, and modified by Alexandre Bouchard in
+% 2019. Previous contributors include Dan Roy, Lise Getoor and Tobias
+% Scheffer, which was slightly modified from the 2010 version by
+% Thorsten Joachims & Johannes Fuernkranz, slightly modified from the
+% 2009 version by Kiri Wagstaff and Sam Roweis's 2008 version, which is
+% slightly modified from Prasad Tadepalli's 2007 version which is a
+% lightly changed version of the previous year's version by Andrew
+% Moore, which was in turn edited from those of Kristian Kersting and
+% Codrina Lauth. Alex Smola contributed to the algorithmic style files.
