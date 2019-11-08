@@ -65,11 +65,8 @@ class Dataset(data.Dataset):
             self.cache_dates.append(date)
 
         # Select intraday sample
-        
         intra_index = row_num - (acc_rows - index) + 1  # skip first tick
-#         print(date, fn, row_num, acc_rows, index, intra_index)
-        
-#         try:
+
         sample_ticks = int(self.sample_interval / 0.5)
         total_ticks = self.series_length * sample_ticks
         X_df = df[self.x_fields].iloc[intra_index: intra_index + total_ticks: sample_ticks]
@@ -77,10 +74,8 @@ class Dataset(data.Dataset):
             (self.series_length, 1, len(self.x_fields))
         ).astype('float64')
         X = torch.from_numpy(X_raw)
-        y = torch.tensor(float(df[self.y_field].iloc[intra_index + total_ticks - 1]))
+        y = torch.tensor(float(df[self.y_field].iloc[intra_index + total_ticks - sample_ticks]))
 
-#         last_sample_tick_info = df[self.tick_info_cols].iloc[intra_index + total_ticks - sample_ticks].values  # for pnl calc
-        
         return X, y
 
     def _get_index_table(self):
