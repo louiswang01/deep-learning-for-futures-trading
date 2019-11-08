@@ -4,6 +4,7 @@
 * main.ipynb: the main script with the whole workflow
 * IH_Input_Creation.ipynb: data pre-processing code
 * models.py: target and benchmark models
+* lstm_trading_strategy.ipynb: strategy code
 * market_making_strategy.ipynb: strategy code
 * dataset.py: dataloader class
 
