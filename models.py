@@ -15,7 +15,7 @@ class PrototypeModel(nn.Module):
         # Main LSTM
         self.lstm = nn.LSTM(input_size=self.input_size,
                             hidden_size=32,
-                            num_layers=1,
+                            num_layers=2,
                             batch_first=False)
         final_concat_size += 32
 
@@ -27,20 +27,9 @@ class PrototypeModel(nn.Module):
         )
 
     def forward(self, data):
-        # Feed tick series into LSTM
-#         lstm_list = []
-#         print(data[0])
-#         for row in data:
-# #             print(row)
-#             lstm_list.append(np.array(row).reshape((len(row), 1)))
-#         lstm_input = torch.from_numpy(np.array(lstm_list))
-#         print(lstm_input)
-#         print(data)
         i_lstm, _ = self.lstm(data[0])
-
-        # Feed concatenated outputs into the
-        # regession networks.
         prediction = torch.squeeze(self.regression(i_lstm[-1]))
+        
         return prediction
 
 
