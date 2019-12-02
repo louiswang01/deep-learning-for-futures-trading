@@ -100,49 +100,53 @@ The objective is to design deep learning models that maximize trading profit for
 
 \subsection{LSTM for Mid Price Change Prediction}
 
-Due to the sequential nature of time series order book tick data, we apply LSTM model with 2 hidden layers and 32 hidden features for mid price change prediction problem. The reason why we use price change as our prediction target as opposed to return is that there is no fundamental change in price scale (e.g. due to share split or drastic volatility regime shift) during the entire training and testing data sample, and that our trading horizon is constrained to be intraday. We train the model using hl{stochastic gradient decent algorithm}. The model architecture is illustrated as following \ref{fig:lstm}:
+Due to the sequential nature of time series order book tick data, we apply LSTM and linear regression in our deep learning model for mid price change prediction problem. We define LSTM with 1 hidden layer, 256 hidden features and 90 samples with 90 seconds interval. Then we process the final output of LSTM with a two-stage linear regression to get the predicted price change\ref{fig:lstm}.
+
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{lstm.png}
+	\caption{In each training, the LSTM part ingests 90 samples of data and produce the final output to linear regression. The price change is predicted by the linear regression}
+	\label{fig:lstm}
+\end{figure}
+
+The reason why we use price change as our prediction target as opposed to return is that there is no fundamental change in price scale (e.g. due to share split or drastic volatility regime shift) during the entire training and testing data sample, and that our trading horizon is constrained to be intraday. We train the model using hl{stochastic gradient decent algorithm}.
 
 Where $x_t$ is the vector of following features as of time $t$:
 
 \begin{itemize}
 \setlength\itemsep{0.1em}
-\item ${wmid\_mid}$: difference between IH weighted mid and simple mid at time $t$
-\item ${wmid\_last}$: difference between IH weighted mid and last traded price
-\item ${mid\_lag}_T$ ($T=1m, 5m, 10m$): difference between current IH mid price and its mid price $T$ time unit before
-\item ${wmid\_ma}_T$ ($T=5min, 10min$): difference between current IH weighted mid and its moving average in past $T$ look-back interval
-\item ${wmid\_max}_T$ ($T=5min, 10min$): difference between current IH weighted mid and its max value in past $T$ look-back interval
-\item ${wmid\_min}_T$ ($T=5min, 10min$): difference between current IH weighted mid and its min value in past $T$ look-back interval
-\item ${wmid\_bidask}_T$ ($T=5min$): difference between current IH weighted mid and its 10-minute VWAP (volume-weighted price)
-\item ${total\_volume}_T$ ($T=10s, 10min$): total IH trading volume in past $T$ look-back interval
-\item ${signed\_volume}_T$ ($T=10s, 10min$): trade-direction signed IH trading volume in past $T$ look-back interval
-\item ${signed\_tick}_T$ ($T=10s, 10min$): number of up price changes minus number of down price changes in the past $T$ look-back interval
-\item ${IF\_mid\_lag}_T$ ($T=1min, 5min, 10min$): difference between current IF mid price and its mid price $T$ time unit before
-\item ${IC\_mid\_lag}_T$ ($T=1min, 5min, 10min$): difference between current IC mid price and its mid price $T$ time unit before
+\item ${mid\_lag}_T$ ($T=1,5,10,30$): difference between current IH mid price and its mid price $T$ seconds before
+\item ${mid\_vol}_T$ ($T=30$): IH mid price volatility in the past $T$ seconds
+\item ${spread}_T$ ($T=10,30,60$): IH mid weighted price spread in $T$ seconds
+\item ${signed\_tick}_T$ ($T=10,30$): number of up price changes minus number of down price changes in the past $T$ look-back interval
+\item ${total\_volume}_T$ ($T=10,30$): total IH trading volume in past $T$ seconds look-back interval
+\item ${signed\_volume}_T$ ($T=10, 30$): trade-direction signed IH trading volume in past $T$ look-back interval
+\item ${IF\_mid\_lag}_T$ ($T=5,30$): difference between current IF mid price and its mid price $T$ seconds before
+\item ${IF\_mid\_vol}_T$ ($T=60$): IF mid price volatility in the past $T$ seconds
+\item ${IF\_spread}_T$ ($T=10$): IF mid weighted price spread in $T$ seconds
+\item ${IF\_total\_volume}_T$ ($T=5,30$): total IF trading volume in past $T$ seconds look-back interval
+\item ${IC\_mid\_lag}_T$ ($T=5,30$): difference between current IC mid price and its mid price $T$ time unit before
+\item ${IC\_mid\_vol}_T$ ($T=60$): IC mid price volatility in the past $T$ seconds
+\item ${IC\_spread}_T$ ($T=10$): IC mid weighted price spread in $T$ seconds
+\item ${IC\_total\_volume}_T$ ($T=5,30$): total IC trading volume in past $T$ seconds look-back interval
 \end{itemize}
 
 Compared with previous research that only focus on daily returns as predictive features, we take advantage of the most granular level of tick-by-tick data (with average update frequency of less than one second), and construct a wide range of features that encompass information in order book imbalance, trading volume, trading direction, technical time series patter, and cross-asset returns. The reason why we choose not to include cross-asset trade or book information is because based on out-sample testing, the additional predictive power to that already included in cross-asset price change is not meaningful and hence we prefer a simpler model for robustness consideration.
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{lstm.png}
-  \caption{Model Structure}
-  \label{fig:lstm}
-\end{figure}
-
 \subsection{Deep Reinforcement Learning for Intraday Trading}
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{rl_strat.png}
-  \caption{Strategy Tree}
-  \label{fig:rl_strat}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=\linewidth]{rl_loop.png}
-  \caption{Training Loop}
-  \label{fig:rl_loop}
-\end{figure}
-
 As a trading strategy’s action space can be conveniently described as either buy, hold or sell (see \ref{fig:rl_strat}), we can train a Deep Q Learning (DQN) model to achieve end-to-end training for a trading model (see the training loop in \ref{fig:rl_loop}). 
+
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{rl_strat.png}
+	\caption{We've defined three actions for Q-learning: buy, hold and sell.}
+	\label{fig:rl_strat}
+\end{figure}
+
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{rl_loop.png}
+	\caption{The training Loop for our DQN model}
+	\label{fig:rl_loop}
+\end{figure}
 
 To characterize the state space, we will use the same features in the LSTM model for comparison purpose. In addition, we add current futures position holding as feature describing the environment. For simplicity, we restrict actions to be either long one additional contract, short one additional contract or no change in position held. As a result, the DNN’s output should be three-dimensional to reflect estimate of value of these three actions. Furthermore, to facilitate calibration, we use market value of position holding 15 minutes since initial setting up a position as “terminal state”. Due to high degree of noise commonly seen in financial data, we choose a Double Q-learning approach to improve robustness and alleviate the risk of overestimating action values. Specifically, we will use the following iterative approach to update the two DNN-based Q(st, at) function estimates, with a cyclic buffer for memory replay. 
 
@@ -154,30 +158,29 @@ The dataset we use is tick data of IH futures (SSE 50 Stock Index Futures), IC f
 
 \subsection{Model Performance}
 
-We evaluate the LSTM model using mean-squared error (MSE) of predicted compared with actual [mid or weighted mid] price change in the testing dataset. Model performance is compared with OLS using same set of features as benchmark.
+We evaluate the LSTM model using mean-squared error (MSE) of predicted compared with actual mid price change in the testing dataset. Model performance is compared with OLS using same set of features as benchmark\ref{tab:perf}.
 
-\begin{table}
-\begin{center}
-\begin{tabular}{ | c | c | c | } 
-\hline
-& In-sample MSE & Out-sample MSE \\ 
-\hline
-LSTM &  1.8 & 2.3 \\ 
-\hline
-OLS & 2.1 & 2.8 \\ 
-\hline
-\end{tabular}
-\end{center}
-\caption{Performance} \label{tab:perf}
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{ | c | c | c | } 
+			\hline
+			& In-sample MSE & Out-sample MSE \\ 
+			\hline
+			LSTM &  0.56 & 0.75 \\ 
+			OLS & 1.7 & 2.2 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Performance comparison between our LSTM model and the OLS model (benchmark)} \label{tab:perf}
 \end{table}
 
-Next, we compare the performance of a simple trading strategy guided by the LSTM with the benchmark passive market-making strategy. The LSTM-based strategy places bid order only when the model predicts the price will move up by more than 0.2, places ask order only when the model predicts the price will move down by more than 0.2, and doesn’t not place any order otherwise. The benchmark passive strategy, however, always places both a bid and an offer order. We restrict both strategy to hold a maximum of one contract at a time. The cumulative profit-and-loss (PnL) plot is as figure \ref{fig:lstm_pnl}:
+Next, we compare the performance of a simple trading strategy guided by the LSTM with the benchmark passive market-making strategy. The LSTM-based strategy places bid order only when the model predicts the price will move up by more than 0.2, places ask order only when the model predicts the price will move down by more than 0.2, and doesn’t not place any order otherwise. The benchmark passive strategy, however, always places both a bid and an offer order. We restrict both strategy to hold a maximum of one contract at a time. The cumulative profit-and-loss (PnL) plot is as figure\ref{fig:lstm_pnl}:
 
 As our next step, we will evaluate deep reinforcement network model through back-testing performance and comparing it with benchmark passive market-making strategy.
 
-\begin{figure}
+\begin{figure}[h]
   \includegraphics[width=\linewidth]{lstm_pnl.png}
-  \caption{Trading PnL between LSTM model and Benchmark}
+  \caption{Trading PnL of the strategy based on our LSTM model and the benchmark strategy}
   \label{fig:lstm_pnl}
 \end{figure}
 

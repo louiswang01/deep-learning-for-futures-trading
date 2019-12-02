@@ -1,0 +1,56 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Borovkova \& Tsiamas(2019)Borovkova and Tsiamas]{doi:10.1002/for.2585}
+Borovkova, S. and Tsiamas, I.
+\newblock An ensemble of lstm neural networks for high-frequency stock market
+  classification.
+\newblock \emph{Journal of Forecasting}, 38\penalty0 (6):\penalty0 600--619,
+  2019.
+\newblock \doi{10.1002/for.2585}.
+\newblock URL \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/for.2585}.
+
+\bibitem[Ganesh \& Rakheja(2018)Ganesh and Rakheja]{ganesh2018deep}
+Ganesh, P. and Rakheja, P.
+\newblock Deep neural networks in high frequency trading, 2018.
+
+\bibitem[Lim \& Gorse(2018)Lim and Gorse]{DBLP:conf/esann/LimG18}
+Lim, Y. and Gorse, D.
+\newblock Reinforcement learning for high-frequency market making.
+\newblock In \emph{26th European Symposium on Artificial Neural Networks,
+  {ESANN} 2018, Bruges, Belgium, April 25-27, 2018}, 2018.
+\newblock URL
+  \url{http://www.elen.ucl.ac.be/Proceedings/esann/esannpdf/es2018-50.pdf}.
+
+\bibitem[Sezer et~al.(2017)Sezer, Ozbayoglu, and Dogdu]{SEZER2017473}
+Sezer, O.~B., Ozbayoglu, M., and Dogdu, E.
+\newblock A deep neural-network based stock trading system based on
+  evolutionary optimized technical analysis parameters.
+\newblock \emph{Procedia Computer Science}, 114:\penalty0 473 -- 480, 2017.
+\newblock ISSN 1877-0509.
+\newblock \doi{https://doi.org/10.1016/j.procs.2017.09.031}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S1877050917318252}.
+\newblock Complex Adaptive Systems Conference with Theme: Engineering Cyber
+  Physical Systems, CAS October 30 -- November 1, 2017, Chicago, Illinois, USA.
+
+\bibitem[Xiong et~al.(2018)Xiong, Liu, Zhong, Yang, and
+  Walid]{xiong2018practical}
+Xiong, Z., Liu, X.-Y., Zhong, S., Yang, H., and Walid, A.
+\newblock Practical deep reinforcement learning approach for stock trading,
+  2018.
+
+\bibitem[Zhong \& Enke(2019)Zhong and Enke]{Zhong2019}
+Zhong, X. and Enke, D.
+\newblock Predicting the daily return direction of the stock market using
+  hybrid machine learning algorithms.
+\newblock \emph{Financial Innovation}, 5\penalty0 (1):\penalty0 24, Jun 2019.
+\newblock ISSN 2199-4730.
+\newblock \doi{10.1186/s40854-019-0138-0}.
+\newblock URL \url{https://doi.org/10.1186/s40854-019-0138-0}.
+
+\end{thebibliography}

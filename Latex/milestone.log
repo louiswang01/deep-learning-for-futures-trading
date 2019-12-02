@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  6 NOV 2019 23:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  1 DEC 2019 23:56
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **milestone.tex
 (./milestone.tex
@@ -221,24 +220,23 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip50
 )
 (./icml2020.sty
-
-LaTeX Warning: You have requested package `icml2020',
-               but the package provides `icml2019'.
-
-Package: icml2019 2019/01/07 v2.0 ICML Conference Style File
-(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/times.sty
+Package: icml2020 2019/01/07 v2.0 ICML Conference Style File
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
-) (./fancyhdr.sty
-\fancy@headwidth=\skip51
-\f@ncyO@elh=\skip52
-\f@ncyO@erh=\skip53
-\f@ncyO@olh=\skip54
-\f@ncyO@orh=\skip55
-\f@ncyO@elf=\skip56
-\f@ncyO@erf=\skip57
-\f@ncyO@olf=\skip58
-\f@ncyO@orf=\skip59
-) (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/color.sty
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip51
+\f@nch@O@elh=\skip52
+\f@nch@O@erh=\skip53
+\f@nch@O@olh=\skip54
+\f@nch@O@orh=\skip55
+\f@nch@O@elf=\skip56
+\f@nch@O@erf=\skip57
+\f@nch@O@olf=\skip58
+\f@nch@O@orf=\skip59
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -246,10 +244,10 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-(./algorithm.sty
-Package: algorithm 
+(/usr/local/texlive/2019/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
 
-Document Style `algorithm' - floating environment
 (/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count108
@@ -264,33 +262,21 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \@float@every@algorithm=\toks18
 \c@algorithm=\count109
 )
-(./algorithmic.sty
-Package: algorithmic 
-
-Document Style `algorithmic' - environment
-(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count110
-\calc@Bcount=\count111
-\calc@Adimen=\dimen125
-\calc@Bdimen=\dimen126
-\calc@Askip=\skip60
-\calc@Bskip=\skip61
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count112
-\calc@Cskip=\skip62
-)
-\c@ALC@line=\count113
-\c@ALC@rem=\count114
-\ALC@tlm=\skip63
+(/usr/local/texlive/2019/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count110
+\c@ALC@line=\count111
+\c@ALC@rem=\count112
+\c@ALC@depth=\count113
+\ALC@tlm=\skip60
+\algorithmicindent=\skip61
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip64
-\bibsep=\skip65
+\bibhang=\skip62
+\bibsep=\skip63
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count115
+\c@NAT@ctr=\count114
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
@@ -300,20 +286,20 @@ Package: forloop 2006/09/18 v3.0 For Loops for LaTeX
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 108.
 \titrun=\box29
-\c@@affiliationcounter=\count116
-\c@@affilnum=\count117
+\c@@affiliationcounter=\count115
+\c@@affilnum=\count116
 \newcaptionbox=\box30
-\newcaptionboxwid=\dimen127
+\newcaptionboxwid=\dimen125
 \icmlrulerbox=\box31
-\icmlrulercount=\count118
-\icmlruleroffset=\dimen128
-\cv@lineheight=\dimen129
-\cv@boxheight=\dimen130
+\icmlrulercount=\count117
+\icmlruleroffset=\dimen126
+\cv@lineheight=\dimen127
+\cv@boxheight=\dimen128
 \cv@tmpbox=\box32
-\cv@refno=\count119
-\cv@tot=\count120
-\cv@tmpc@=\count121
-\cv@tmpc=\count122
+\cv@refno=\count118
+\cv@tot=\count119
+\cv@tmpc@=\count120
+\cv@tmpc=\count121
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/soul/soul.sty
 Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
@@ -322,10 +308,10 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@cmds=\toks21
 \SOUL@buffer=\toks22
 \SOUL@token=\toks23
-\SOUL@spaceskip=\skip66
-\SOUL@ttwidth=\dimen131
-\SOUL@uldp=\dimen132
-\SOUL@ulht=\dimen133
+\SOUL@spaceskip=\skip64
+\SOUL@ttwidth=\dimen129
+\SOUL@uldp=\dimen130
+\SOUL@ulht=\dimen131
 ) (./milestone.aux)
 \openout1 = `milestone.aux'.
 
@@ -364,16 +350,16 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count123
-\scratchdimen=\dimen134
+\scratchcounter=\count122
+\scratchdimen=\dimen132
 \scratchbox=\box33
-\nofMPsegments=\count124
-\nofMParguments=\count125
+\nofMPsegments=\count123
+\nofMParguments=\count124
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count126
-\MPscratchDim=\dimen135
-\MPnumerator=\count127
-\makeMPintoPDFobject=\count128
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen133
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
 \everyMPtoPDFconversion=\toks25
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -401,7 +387,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count129
+\c@section@level=\count128
 )
 LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
@@ -417,7 +403,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
-\c@@affilcu=\count130
+\c@@affilcu=\count129
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
@@ -436,69 +422,75 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 109.
+<lstm.png, id=11, 482.80376pt x 261.97874pt>
+File: lstm.png Graphic file (type png)
+<use lstm.png>
+Package pdftex.def Info: lstm.png  used on input line 106.
+(pdftex.def)             Requested size: 234.8775pt x 127.44728pt.
+
+Underfull \vbox (badness 1688) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.112 
+       <./lstm.png>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 117.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 109.
- [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
 
+Underfull \hbox (badness 1221) in paragraph at lines 122--123
+[]$[][]$ \OT1/ptm/m/n/10 (+20) ($\OML/cmm/m/it/10 T \OT1/cmr/m/n/10 = 10\OML/cm
+m/m/it/10 ; \OT1/cmr/m/n/10 30$\OT1/ptm/m/n/10 (+20) ): trade-direction
+ []
 
-
-]
-<lstm.png, id=32, 794.97pt x 303.1325pt>
-File: lstm.png Graphic file (type png)
-<use lstm.png>
-Package pdftex.def Info: lstm.png  used on input line 126.
-(pdftex.def)             Requested size: 234.8775pt x 89.56207pt.
-<rl_strat.png, id=34, 286.671pt x 119.9682pt>
+<rl_strat.png, id=34, 344.0052pt x 180.675pt>
 File: rl_strat.png Graphic file (type png)
 <use rl_strat.png>
-Package pdftex.def Info: rl_strat.png  used on input line 134.
-(pdftex.def)             Requested size: 234.8775pt x 98.29767pt.
-<rl_loop.png, id=35, 306.9066pt x 172.4844pt>
+Package pdftex.def Info: rl_strat.png  used on input line 140.
+(pdftex.def)             Requested size: 234.8775pt x 123.35912pt.
+<rl_loop.png, id=35, 352.1958pt x 345.9324pt>
 File: rl_loop.png Graphic file (type png)
 <use rl_loop.png>
-Package pdftex.def Info: rl_loop.png  used on input line 140.
-(pdftex.def)             Requested size: 234.8775pt x 132.00803pt.
+Package pdftex.def Info: rl_loop.png  used on input line 146.
+(pdftex.def)             Requested size: 234.8775pt x 230.70197pt.
 
-Underfull \vbox (badness 1960) has occurred while \output is active []
+Package Fancyhdr Warning: \footskip is too small (0.0pt): 
+Make it at least 3.30003pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.154 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-2}) has been already used, duplicate ignored
+[2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.154 
+l.152 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.154 
-       <./lstm.png> <./rl_strat.png> <./rl_loop.png>]
-<lstm_pnl.png, id=50, 355.0866pt x 241.8636pt>
+l.152 
+       <./rl_strat.png> <./rl_loop.png>]
+<lstm_pnl.png, id=51, 484.6908pt x 311.7246pt>
 File: lstm_pnl.png Graphic file (type png)
 <use lstm_pnl.png>
-Package pdftex.def Info: lstm_pnl.png  used on input line 179.
-(pdftex.def)             Requested size: 234.8775pt x 159.98476pt.
+Package pdftex.def Info: lstm_pnl.png  used on input line 182.
+(pdftex.def)             Requested size: 234.8775pt x 151.05782pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 [][][]\OT1/ptm/m/n/10 (+13) https://github.com/louiswang01/deep-learning-for-fu
 tures-
  []
@@ -517,44 +509,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--19
 [][]$\OT1/pcr/m/n/10 http : / / www . sciencedirect . com / science /
  []
 
-
-Underfull \hbox (badness 1810) in paragraph at lines 27--34
-[]\OT1/ptm/m/n/10 (+20) Zhong, X. and Enke, D.  Pre-dict-ing the daily re-
- []
-
 [3pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
 as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.34 
+l.19 
      pdfTeX warning (ext4): destination with the same identifier (name{figure.4
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.34 
-      <./lstm_pnl.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
+l.19 
+      <./lstm_pnl.png>]
+Underfull \hbox (badness 1810) in paragraph at lines 27--34
+[]\OT1/ptm/m/n/10 (+20) Zhong, X. and Enke, D.  Pre-dict-ing the daily re-
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 201.
  [4
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 201.
  (./milestone.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 201.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 201.
 Package rerunfilecheck Info: File `milestone.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 201.
  ) 
 Here is how much of TeX's memory you used:
- 8231 strings out of 492616
- 123879 string characters out of 6129482
- 256378 words of memory out of 5000000
- 11885 multiletter control sequences out of 15000+600000
- 28592 words of font info for 124 fonts, out of 8000000 for 9000
+ 8201 strings out of 492616
+ 123796 string characters out of 6129482
+ 257359 words of memory out of 5000000
+ 11840 multiletter control sequences out of 15000+600000
+ 29284 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,11n,45p,1324b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 33i,11n,45p,1324b,431s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
@@ -565,10 +557,10 @@ xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on milestone.pdf (4 pages, 251399 bytes).
+Output written on milestone.pdf (4 pages, 370517 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 115 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  27 named destinations out of 1000 (max. 500000)
  25109 words of extra memory for PDF output out of 29859 (max. 10000000)
 
